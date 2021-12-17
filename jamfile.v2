@@ -1,0 +1,31 @@
+##
+## Copyright (C) 2021 CodeShop B.V.
+## http://www.code-shop.com
+##
+## For licensing see the LICENSE file
+##
+
+import os ;
+
+project x264
+  : usage-requirements
+    <include>out64-msvc-14/include
+  ;
+
+if [ os.name ] = NT
+{
+  searched-lib x264 :
+    : <toolset>msvc-14.1,<address-model>64,<variant>debug:<search>out64-msvc-14/debug
+      <toolset>msvc-14.2,<address-model>64,<variant>debug:<search>out64-msvc-14/debug
+      <toolset>msvc-14.1,<address-model>64,<variant>release:<search>out64-msvc-14/release
+      <toolset>msvc-14.2,<address-model>64,<variant>release:<search>out64-msvc-14/release
+      <name>libx264
+    ;
+
+}
+else
+{
+  lib x264 : : <link>static ;
+}
+
+## End Of File
