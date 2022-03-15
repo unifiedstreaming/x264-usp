@@ -19,10 +19,8 @@ project x264
 if [ os.name ] = NT
 {
   searched-lib x264 :
-    : <toolset>msvc-14.1,<address-model>64,<variant>debug:<search>out64-msvc-14/debug
-      <toolset>msvc-14.2,<address-model>64,<variant>debug:<search>out64-msvc-14/debug
-      <toolset>msvc-14.1,<address-model>64,<variant>release:<search>out64-msvc-14/release
-      <toolset>msvc-14.2,<address-model>64,<variant>release:<search>out64-msvc-14/release
+    : <address-model>64,<variant>debug:<search>out64-msvc-14/debug
+      <address-model>64,<variant>release:<search>out64-msvc-14/release
       <name>libx264
     ;
 
